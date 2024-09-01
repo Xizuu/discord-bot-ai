@@ -1,0 +1,40 @@
+{
+	"name": "with-esm",
+	"version": "1.0.0",
+	"main": "src/index.mjs",
+	"module": "src/index.mjs",
+	"type": "module",
+	"author": "@sapphire",
+	"license": "UNLICENSE",
+	"imports": {
+		"#lib/*": "./src/lib/*.mjs",
+		"#root/*": "./src/*.mjs",
+		"#rootJson/*": "./src/*.json"
+	},
+	"dependencies": {
+		"@justskydev/replicateai": "^1.0.0-rc.3",
+		"@sapphire/discord-utilities": "^3.2.2",
+		"@sapphire/fetch": "^3.0.2",
+		"@sapphire/framework": "^5.0.7",
+		"@sapphire/plugin-editable-commands": "^4.0.2",
+		"@sapphire/plugin-logger": "^4.0.2",
+		"@sapphire/time-utilities": "^1.7.12",
+		"colorette": "^2.0.20",
+		"discord.js": "^14.14.1"
+	},
+	"devDependencies": {
+		"@sapphire/cli": "^1.9.3",
+		"@sapphire/prettier-config": "^2.0.0",
+		"nodemon": "^3.0.3",
+		"npm-run-all2": "^6.1.1",
+		"prettier": "^3.2.4"
+	},
+	"scripts": {
+		"sapphire": "sapphire",
+		"generate": "sapphire generate",
+		"watch": "nodemon --enable-source-maps --experimental-json-modules -L --watch src",
+		"start": "node --enable-source-maps --experimental-json-modules src/index.mjs",
+		"format": "prettier --write \"src/**/*.mjs\""
+	},
+	"prettier": "@sapphire/prettier-config"
+}
